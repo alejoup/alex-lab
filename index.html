@@ -4,22 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>¿En qué te puedo ayudar? — Automatización, datos e IA</title>
-
-<!-- Reemplaza TU-USUARIO y TU-REPO por los reales una vez publicado en GitHub Pages -->
-<meta name="description" content="Automatización, datos e IA aplicada — para negocios sin conocimiento técnico hasta equipos de desarrollo avanzados.">
-
-<meta property="og:type" content="website">
-<meta property="og:title" content="¿Conoces a alguien con estos problemas?">
-<meta property="og:description" content="Automatización, datos e IA aplicada — comparte esto y descubre en qué te puedo ayudar.">
-<meta property="og:image" content="https://TU-USUARIO.github.io/TU-REPO/assets/og-image.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:url" content="https://TU-USUARIO.github.io/TU-REPO/">
-
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="¿Conoces a alguien con estos problemas?">
-<meta name="twitter:description" content="Automatización, datos e IA aplicada — comparte esto y descubre en qué te puedo ayudar.">
-<meta name="twitter:image" content="https://TU-USUARIO.github.io/TU-REPO/assets/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -293,6 +277,54 @@
     .item-emoji{font-size:22px; width:24px; margin-top:16px;}
   }
 
+  /* ---------- CASOS DE ÉXITO ---------- */
+  .cases{padding:76px 0 88px; background:var(--bg-alt); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .cases-head{text-align:center; max-width:620px; margin:0 auto 40px;}
+  .cases-head h2{font-size:32px; margin-bottom:14px;}
+  .cases-head p{color:var(--muted); font-size:16px;}
+
+  .carousel-wrap{position:relative; max-width:var(--maxw); margin:0 auto; padding:0 24px;}
+  .carousel{
+    display:flex; gap:18px; overflow-x:auto; scroll-snap-type:x mandatory;
+    padding:6px 4px 20px; scrollbar-width:none;
+  }
+  .carousel::-webkit-scrollbar{display:none;}
+  .case-card{
+    flex:0 0 auto; width:300px; scroll-snap-align:start;
+    background:var(--card); border:1px solid var(--line); border-radius:var(--radius-m);
+    padding:26px 24px; display:flex; flex-direction:column;
+  }
+  .case-emoji{font-size:26px; margin-bottom:14px;}
+  .case-stat{
+    font-family:'Fraunces',serif; font-weight:900; font-size:38px;
+    color:var(--primary); line-height:1; margin-bottom:14px;
+  }
+  .case-card h3{font-size:17px; font-weight:700; font-family:'Inter',sans-serif; margin-bottom:3px;}
+  .case-type{font-size:12.5px; color:var(--accent-dark); font-weight:600; margin-bottom:12px;}
+  .case-text{font-size:14px; color:var(--muted); line-height:1.6; margin:0;}
+  .case-text strong{color:var(--ink);}
+
+  .carousel-nav{
+    display:flex; justify-content:center; gap:12px; margin-top:8px;
+  }
+  .carousel-btn{
+    width:42px; height:42px; border-radius:50%; border:1.5px solid var(--line);
+    background:var(--card); display:flex; align-items:center; justify-content:center;
+    cursor:pointer; color:var(--ink); transition:border-color .15s ease, transform .15s ease;
+  }
+  .carousel-btn:hover{border-color:var(--primary); color:var(--primary); transform:translateY(-1px);}
+
+  .swipe-hint{
+    text-align:center; font-size:13px; color:var(--muted); margin-top:14px;
+    transition:opacity .3s ease;
+  }
+  .swipe-hint.hidden{opacity:0;}
+
+  @media (max-width:640px){
+    .case-card{width:82vw;}
+    .carousel-nav{display:none;}
+  }
+
   /* ---------- CLOSING ---------- */
   .closing{padding:70px 0 90px; text-align:center;}
   .closing h2{font-size:28px; margin-bottom:14px;}
@@ -312,6 +344,7 @@
       <li><a href="#top">Inicio</a></li>
       <li><a href="#pilares">Cómo ayudo</a></li>
       <li><a href="#niveles">Niveles</a></li>
+      <li><a href="#casos">Casos de éxito</a></li>
       <li><a href="https://wa.me/523342473145" class="nav-cta">Escribir por WhatsApp</a></li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
@@ -322,6 +355,7 @@
     <a href="#top">Inicio</a>
     <a href="#pilares">Cómo ayudo</a>
     <a href="#niveles">Niveles</a>
+    <a href="#casos">Casos de éxito</a>
     <a href="https://wa.me/523342473145">Escribir por WhatsApp</a>
   </div>
 </header>
@@ -513,6 +547,100 @@
   </div>
 </section>
 
+<section class="cases" id="casos">
+  <div class="wrap">
+    <div class="cases-head">
+      <h2>Casos de éxito</h2>
+      <p>Resultados reales, en empresas reales — explicados sin jerga.</p>
+    </div>
+  </div>
+
+  <div class="carousel-wrap">
+    <div class="carousel" id="carousel">
+
+      <div class="case-card">
+        <span class="case-emoji">⏱️</span>
+        <div class="case-stat">95%</div>
+        <h3>Telefónica Movistar</h3>
+        <p class="case-type">Telecomunicaciones — Ecuador</p>
+        <p class="case-text">40 analistas hacían sus reportes a mano, repartidos en varios canales. Automaticé todo con reportes en tiempo real y liberamos <strong>2,160 horas de trabajo manual cada mes</strong> — un 95% menos.</p>
+      </div>
+
+      <div class="case-card">
+        <span class="case-emoji">🌎</span>
+        <div class="case-stat">90%</div>
+        <h3>Livingston International</h3>
+        <p class="case-type">Comercio exterior y logística</p>
+        <p class="case-text">Su plataforma recibe más de 500 millones de solicitudes al mes, y las fallas afectaban a Estados Unidos, India y Europa. Lideré la optimización de sus procesos y <strong>bajamos las caídas de servicio un 90%</strong>.</p>
+      </div>
+
+      <div class="case-card">
+        <span class="case-emoji">🏦</span>
+        <div class="case-stat">96%</div>
+        <h3>Banco Azteca</h3>
+        <p class="case-type">Banco</p>
+        <p class="case-text">Sus reportes más importantes tardaban hasta 3 días en procesarse. Los automaticé con IA y <strong>ahora toman 3 horas</strong> — 96% más rápido.</p>
+      </div>
+
+      <div class="case-card">
+        <span class="case-emoji">📦</span>
+        <div class="case-stat">87.5%</div>
+        <h3>CTDI México</h3>
+        <p class="case-type">Logística y soporte técnico</p>
+        <p class="case-text">Auditar el inventario para clientes internacionales tomaba 8 horas por ciclo. Construí un sistema propio de integración de datos y <strong>lo bajamos a 1 hora</strong> — 87.5% más rápido.</p>
+      </div>
+
+      <div class="case-card">
+        <span class="case-emoji">🚗</span>
+        <div class="case-stat">20%</div>
+        <h3>DriveApp.MX</h3>
+        <p class="case-type">Startup de movilidad</p>
+        <p class="case-text">Su infraestructura era cara y lenta para crecer, y facturaban a mano cada noche (hasta 4 horas). Migré todo a la nube y automaticé la facturación: <strong>20% menos costos</strong>, lanzamientos 30% más rápidos, y facturas al instante.</p>
+      </div>
+
+      <div class="case-card">
+        <span class="case-emoji">🧭</span>
+        <div class="case-stat">60%</div>
+        <h3>Consultor independiente</h3>
+        <p class="case-type">PYMES y startups</p>
+        <p class="case-text">Negocios pequeños con su información regada en varios sistemas, sin claridad para decidir. Les diseñé automatización y análisis a la medida, y <strong>redujimos sus tiempos de reporte un 60%</strong>.</p>
+      </div>
+
+      <div class="case-card">
+        <span class="case-emoji">🏗️</span>
+        <h3>Sistemas Gema</h3>
+        <p class="case-type">Consultoría e implementación de ERP</p>
+        <p class="case-text">Competían por posicionarse frente a otros proveedores de tecnología. Lideré la estrategia digital y la evaluación de proveedores, y <strong>aseguramos contratos clave</strong> de implementación de Odoo ERP.</p>
+      </div>
+
+      <div class="case-card">
+        <span class="case-emoji">🛒</span>
+        <h3>Asesoría a consultor de Amazon</h3>
+        <p class="case-type">Mentoría 1 a 1</p>
+        <p class="case-text">Un consultor que asesora a vendedores de Amazon tenía todo su criterio en la cabeza, sin forma de escalarlo. Le ayudé a <strong>convertir ese conocimiento en un copiloto de IA</strong> que sigue exactamente su forma de decidir — no un piloto automático genérico.</p>
+      </div>
+
+      <div class="case-card">
+        <span class="case-emoji">🗂️</span>
+        <h3>Sistema de seguimiento de tareas</h3>
+        <p class="case-type">Proyecto propio</p>
+        <p class="case-text">El desarrollo asistido por IA se sentía sin control, fácil perder de vista errores o pasos importantes. Construí mi propia herramienta tipo Kanban, con mis criterios en cada etapa, para <strong>mantener el orden en cada proyecto</strong>.</p>
+      </div>
+
+    </div>
+
+    <div class="carousel-nav">
+      <button class="carousel-btn" id="prevBtn" aria-label="Caso anterior">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button class="carousel-btn" id="nextBtn" aria-label="Siguiente caso">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+    <p class="swipe-hint" id="swipeHint">Desliza para ver más casos →</p>
+  </div>
+</section>
+
 <section class="closing">
   <div class="wrap">
     <h2>¿No estás seguro si su problema encaja aquí?</h2>
@@ -545,6 +673,20 @@
   const tabs = document.querySelectorAll('.tab');
   const panels = document.querySelectorAll('.panel');
   const clickHint = document.getElementById('clickHint');
+
+  const carousel = document.getElementById('carousel');
+  const swipeHint = document.getElementById('swipeHint');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  if (carousel) {
+    let hintHidden = false;
+    carousel.addEventListener('scroll', () => {
+      if (!hintHidden) { swipeHint.classList.add('hidden'); hintHidden = true; }
+    });
+    const scrollAmount = () => carousel.querySelector('.case-card').offsetWidth + 18;
+    prevBtn.addEventListener('click', () => carousel.scrollBy({left: -scrollAmount(), behavior:'smooth'}));
+    nextBtn.addEventListener('click', () => carousel.scrollBy({left: scrollAmount(), behavior:'smooth'}));
+  }
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
       const level = tab.dataset.level;
