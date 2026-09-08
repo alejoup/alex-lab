@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>¿En qué te puedo ayudar? — Automatización, datos e IA</title>
+
+<!-- Reemplaza TU-USUARIO y TU-REPO por los reales una vez publicado en GitHub Pages -->
+<meta name="description" content="Automatización, datos e IA aplicada — para negocios sin conocimiento técnico hasta equipos de desarrollo avanzados.">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="¿Conoces a alguien con estos problemas?">
+<meta property="og:description" content="Automatización, datos e IA aplicada — comparte esto y descubre en qué te puedo ayudar.">
+<meta property="og:image" content="https://TU-USUARIO.github.io/TU-REPO/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://TU-USUARIO.github.io/TU-REPO/">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="¿Conoces a alguien con estos problemas?">
+<meta name="twitter:description" content="Automatización, datos e IA aplicada — comparte esto y descubre en qué te puedo ayudar.">
+<meta name="twitter:image" content="https://TU-USUARIO.github.io/TU-REPO/assets/og-image.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F7F3EA;
+    --bg-alt:#F1EBDC;
+    --card:#FFFFFF;
+    --ink:#20241F;
+    --muted:#69675D;
+    --line:#E6DFC9;
+    --primary:#1F6F5C;
+    --primary-dark:#154F42;
+    --primary-tint:#E4EFEA;
+    --accent:#E0A63D;
+    --accent-dark:#B9822A;
+    --green:#2F9E44;
+    --yellow:#E8A300;
+    --yellow-text:#A6740A;
+    --red:#D64545;
+    --radius-s:10px;
+    --radius-m:16px;
+    --radius-l:28px;
+    --maxw:1120px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter',-apple-system,sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces',serif;
+    font-weight:700;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+  :focus-visible{outline:2px solid var(--primary);outline-offset:3px;}
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.001ms !important; transition-duration:0.001ms !important;}
+  }
+
+  /* ---------- NAV ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(247,243,234,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 24px;
+    max-width:var(--maxw); margin:0 auto;
+  }
+  .logo{
+    display:flex; align-items:center; gap:9px;
+    font-family:'Fraunces',serif; font-weight:700; font-size:19px;
+    text-decoration:none; color:var(--ink);
+  }
+  .logo-mark{
+    width:11px;height:11px;border-radius:50%;
+    background:var(--primary); flex-shrink:0;
+  }
+  .nav-links{
+    display:flex; align-items:center; gap:30px;
+    list-style:none; margin:0; padding:0;
+  }
+  .nav-links a{
+    text-decoration:none; font-size:15px; font-weight:500; color:var(--ink);
+    transition:color .15s ease;
+  }
+  .nav-links a:hover{color:var(--primary);}
+  .nav-cta{
+    background:var(--primary); color:#fff !important;
+    padding:10px 20px; border-radius:999px;
+    font-size:14px; font-weight:600; text-decoration:none;
+    transition:background .15s ease, transform .15s ease;
+    white-space:nowrap;
+  }
+  .nav-cta:hover{background:var(--primary-dark); transform:translateY(-1px);}
+  .hamburger{
+    display:none; background:none; border:none; cursor:pointer;
+    width:40px; height:40px; padding:0;
+    align-items:center; justify-content:center;
+  }
+  .hamburger span{
+    display:block; width:22px; height:2px; background:var(--ink);
+    position:relative; transition:transform .2s ease, opacity .2s ease;
+  }
+  .hamburger span::before,.hamburger span::after{
+    content:''; position:absolute; left:0; width:22px; height:2px; background:var(--ink);
+    transition:transform .2s ease, top .2s ease;
+  }
+  .hamburger span::before{top:-7px;}
+  .hamburger span::after{top:7px;}
+  .hamburger.open span{background:transparent;}
+  .hamburger.open span::before{transform:rotate(45deg); top:0;}
+  .hamburger.open span::after{transform:rotate(-45deg); top:0;}
+
+  .mobile-menu{
+    display:none;
+    flex-direction:column;
+    background:var(--bg);
+    border-bottom:1px solid var(--line);
+    padding:6px 24px 18px;
+  }
+  .mobile-menu a{
+    text-decoration:none; color:var(--ink); font-size:16px; font-weight:500;
+    padding:12px 0; border-bottom:1px solid var(--line);
+  }
+  .mobile-menu a:last-child{border-bottom:none;}
+  .mobile-menu.open{display:flex;}
+
+  @media (max-width:760px){
+    .nav-links{display:none;}
+    .hamburger{display:flex;}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{padding:64px 0 72px;}
+  .hero .wrap{
+    display:grid; grid-template-columns:1.05fr 0.95fr; gap:52px; align-items:center;
+  }
+  .hero-eyebrow{
+    display:inline-flex; gap:10px; align-items:center;
+    font-size:13.5px; color:var(--primary-dark); font-weight:600;
+    background:var(--primary-tint); padding:7px 14px; border-radius:999px;
+    margin-bottom:22px;
+  }
+  .hero h1{
+    font-size:44px; line-height:1.12; margin-bottom:20px;
+  }
+  .hero h1 em{
+    font-style:italic; color:var(--primary);
+  }
+  .hero p.lead{
+    font-size:17px; color:var(--muted); max-width:480px; margin-bottom:32px;
+  }
+  .hero-ctas{display:flex; gap:14px; flex-wrap:wrap;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:14px 26px; border-radius:999px;
+    font-size:15px; font-weight:600; text-decoration:none;
+    border:1.5px solid transparent; cursor:pointer;
+    transition:transform .15s ease, background .15s ease, border-color .15s ease;
+  }
+  .btn-primary{background:var(--accent); color:#241a08;}
+  .btn-primary:hover{background:var(--accent-dark); transform:translateY(-2px);}
+  .btn-ghost{border-color:var(--ink); color:var(--ink); background:transparent;}
+  .btn-ghost:hover{border-color:var(--primary); color:var(--primary); transform:translateY(-2px);}
+  .hero-art{position:relative;}
+  .hero-art img{
+    border-radius:var(--radius-l);
+    box-shadow:0 30px 60px -25px rgba(32,36,31,0.35);
+  }
+
+  @media (max-width:900px){
+    .hero .wrap{grid-template-columns:1fr; gap:36px;}
+    .hero{padding:40px 0 48px;}
+    .hero h1{font-size:32px;}
+    .hero-art{order:2;}
+  }
+
+  /* ---------- PILLARS (icon strip) ---------- */
+  .pillars{padding:56px 0; background:var(--bg-alt); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .pillars-grid{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:28px;
+  }
+  .pillar{text-align:center;}
+  .pillar img{width:84px; height:84px; margin:0 auto 14px; object-fit:contain;}
+  .pillar h3{font-size:16px; font-weight:600; font-family:'Inter',sans-serif; margin-bottom:6px;}
+  .pillar p{font-size:13.5px; color:var(--muted); margin:0;}
+
+  @media (max-width:700px){
+    .pillars-grid{grid-template-columns:repeat(2,1fr); row-gap:34px;}
+  }
+
+  /* ---------- LEVELS / TABS ---------- */
+  .levels{padding:76px 0 88px;}
+  .levels-head{text-align:center; max-width:620px; margin:0 auto 40px;}
+  .levels-head h2{font-size:32px; margin-bottom:14px;}
+  .levels-head p{color:var(--muted); font-size:16px;}
+
+  .tabs-wrap{position:relative; display:flex; justify-content:center; margin-bottom:44px;}
+  .tabs{
+    display:flex; justify-content:center; gap:10px;
+    flex-wrap:wrap;
+  }
+  .click-hint{
+    position:absolute; top:-32px; right:calc(50% - 112px);
+    color:var(--primary);
+    animation:hintBounce 1.4s ease-in-out infinite;
+    transition:opacity .3s ease;
+  }
+  .click-hint.hidden{opacity:0; pointer-events:none;}
+  @keyframes hintBounce{
+    0%,100%{transform:translate(0,0) rotate(0deg);}
+    50%{transform:translate(3px,5px) rotate(0deg);}
+  }
+  @media (max-width:520px){
+    .tabs-wrap{flex-direction:column; align-items:center;}
+    .click-hint{position:static; display:block; text-align:center; margin-bottom:6px;}
+  }
+  .tab{
+    display:flex; align-items:center; gap:9px;
+    padding:11px 22px; border-radius:999px;
+    border:1.5px solid var(--line); background:var(--card);
+    font-size:14.5px; font-weight:600; color:var(--muted);
+    cursor:pointer; transition:all .18s ease;
+  }
+  .tab .dot{width:9px;height:9px;border-radius:50%;}
+  .tab[data-level="basico"] .dot{background:var(--green);}
+  .tab[data-level="intermedio"] .dot{background:var(--yellow);}
+  .tab[data-level="avanzado"] .dot{background:var(--red);}
+  .tab.active{
+    border-color:var(--ink); color:var(--ink);
+    background:var(--card);
+    box-shadow:0 6px 16px -8px rgba(32,36,31,0.25);
+  }
+  .tab:hover{color:var(--ink);}
+
+  .panel{display:none;}
+  .panel.active{display:block; animation:panelIn .32s ease;}
+  @keyframes panelIn{
+    from{opacity:0; transform:translateY(10px);}
+    to{opacity:1; transform:translateY(0);}
+  }
+  .panel-sub{text-align:center; font-size:14.5px; font-style:italic; font-weight:600; margin-bottom:20px;}
+  .panel[data-panel="basico"] .panel-sub{color:var(--green); opacity:0.82;}
+  .panel[data-panel="intermedio"] .panel-sub{color:var(--yellow-text); opacity:0.9;}
+  .panel[data-panel="avanzado"] .panel-sub{color:var(--red); opacity:0.82;}
+
+  .intro-phrase{
+    font-family:'Fraunces',serif; font-style:italic; font-weight:600;
+    font-size:26px; color:var(--ink); text-align:center;
+    margin:0 0 40px;
+  }
+
+  .cat{
+    font-size:25px; font-weight:700; color:var(--primary-dark);
+    opacity:0.25;
+    margin:38px 0 12px; letter-spacing:0.01em;
+  }
+  .cat:first-of-type{margin-top:0;}
+  .items{display:grid; gap:16px;}
+  .item-row{display:flex; align-items:flex-start; gap:12px;}
+  .item-emoji{
+    font-size:26px; line-height:1; flex-shrink:0;
+    margin-top:18px; width:28px; text-align:center;
+  }
+  .item{
+    flex:1; min-width:0;
+    background:var(--card); border:1px solid var(--line); border-radius:var(--radius-m);
+    padding:20px 22px; border-left:4px solid var(--ink);
+  }
+  .item[data-color="green"]{border-left-color:var(--green);}
+  .item[data-color="yellow"]{border-left-color:var(--yellow);}
+  .item[data-color="red"]{border-left-color:var(--red);}
+  .item .problem{font-size:15.5px; font-weight:600; margin-bottom:6px;}
+  .item .skill{font-size:14px; color:var(--muted); margin:0;}
+  .item .skill .def{color:#9a9587; font-style:italic;}
+
+  @media (max-width:480px){
+    .item-emoji{font-size:22px; width:24px; margin-top:16px;}
+  }
+
+  /* ---------- CLOSING ---------- */
+  .closing{padding:70px 0 90px; text-align:center;}
+  .closing h2{font-size:28px; margin-bottom:14px;}
+  .closing p{color:var(--muted); font-size:15.5px; margin-bottom:30px;}
+  .whatsapp-number{display:block; margin-top:14px; color:var(--muted); font-size:14px;}
+
+  footer{padding:26px 0; border-top:1px solid var(--line); text-align:center;}
+  footer p{color:var(--muted); font-size:13px; margin:0;}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a href="#top" class="logo"><span class="logo-mark"></span>Alex</a>
+    <ul class="nav-links">
+      <li><a href="#top">Inicio</a></li>
+      <li><a href="#pilares">Cómo ayudo</a></li>
+      <li><a href="#niveles">Niveles</a></li>
+      <li><a href="https://wa.me/523342473145" class="nav-cta">Escribir por WhatsApp</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
+      <span></span>
+    </button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#top">Inicio</a>
+    <a href="#pilares">Cómo ayudo</a>
+    <a href="#niveles">Niveles</a>
+    <a href="https://wa.me/523342473145">Escribir por WhatsApp</a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <span class="hero-eyebrow">Automatización, datos e IA aplicada</span>
+      <h1>Automatiza lo repetitivo.<br>Libera tiempo para <em>lo que importa</em>.</h1>
+      <p class="lead">Ayudo a negocios y equipos a quitarse de encima el trabajo manual — con automatización, datos ordenados e IA aplicada a procesos reales.</p>
+      <div class="hero-ctas">
+        <a href="https://wa.me/523342473145" class="btn btn-primary">Escribir por WhatsApp</a>
+        <a href="#niveles" class="btn btn-ghost">Ver en qué te puedo ayudar</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <img src="assets/hero.jpg" alt="Equipo colaborando en una sesión de ideación, y una persona analizando datos en su estación de trabajo">
+    </div>
+  </div>
+</section>
+
+<section class="pillars" id="pilares">
+  <div class="wrap">
+    <div class="pillars-grid">
+      <div class="pillar">
+        <img src="assets/icono-creatividad.png" alt="">
+        <h3>Ideas con IA</h3>
+        <p>Aplicada a tu forma de trabajar, no genérica.</p>
+      </div>
+      <div class="pillar">
+        <img src="assets/icono-crecimiento.png" alt="">
+        <h3>Automatización</h3>
+        <p>Procesos que corren solos, de punta a punta.</p>
+      </div>
+      <div class="pillar">
+        <img src="assets/icono-analisis.png" alt="">
+        <h3>Datos con sentido</h3>
+        <p>Información ordenada, lista para decidir.</p>
+      </div>
+      <div class="pillar">
+        <img src="assets/icono-resultados.png" alt="">
+        <h3>Resultados medibles</h3>
+        <p>Menos horas perdidas, más control real.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="levels" id="niveles">
+  <div class="wrap">
+    <div class="levels-head">
+      <h2>¿Conoces a alguien con estos problemas?</h2>
+      <p>Elige el nivel que le haga sentido — técnico o no — y comparte lo que encaje.</p>
+    </div>
+
+    <div class="tabs-wrap">
+      <div class="tabs">
+        <button class="tab active" data-level="basico"><span class="dot"></span>Básico</button>
+        <button class="tab" data-level="intermedio"><span class="dot"></span>Intermedio</button>
+        <button class="tab" data-level="avanzado"><span class="dot"></span>Avanzado</button>
+      </div>
+      <span class="click-hint" id="clickHint" aria-hidden="true">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z"/>
+          <path d="M13 13l6 6"/>
+        </svg>
+      </span>
+    </div>
+
+    <div class="panel active" data-panel="basico">
+      <p class="panel-sub">Dueños de negocio, emprendedores, equipos sin conocimiento técnico</p>
+      <p class="intro-phrase">Si conoces a alguien&hellip;</p>
+      <div class="items">
+        <div class="cat">Bases de datos y organización</div>
+        <div class="item-row"><span class="item-emoji">📊</span><div class="item" data-color="green">
+          <p class="problem">que no sabe qué está pasando en su negocio hasta que ya es tarde...</p>
+          <p class="skill">Ordeno su información (clientes, ventas, inventario) dispersa en Excels o sistemas sueltos, y le doy reportes simples y automáticos del estado real.</p>
+        </div></div>
+
+        <div class="cat">Automatización</div>
+        <div class="item-row"><span class="item-emoji">⏱️</span><div class="item" data-color="green">
+          <p class="problem">que pierde horas haciendo lo mismo todos los días (reportes, seguimiento, mensajes)...</p>
+          <p class="skill">Automatizo esas tareas y conecto las herramientas que ya usa (WhatsApp, Excel, CRM <span class="def">(sistema para gestionar clientes)</span>, correo) para que no tenga que copiar y pegar nada.</p>
+        </div></div>
+
+        <div class="cat">Inteligencia Artificial</div>
+        <div class="item-row"><span class="item-emoji">🤖</span><div class="item" data-color="green">
+          <p class="problem">que quiere usar IA pero no sabe por dónde empezar...</p>
+          <p class="skill">Le enseño a usar ChatGPT o Claude en su día a día, y doy capacitaciones en vivo para que su equipo pierda el miedo y empiece a usarla ya.</p>
+        </div></div>
+
+        <div class="cat">Software a la medida</div>
+        <div class="item-row"><span class="item-emoji">🧩</span><div class="item" data-color="green">
+          <p class="problem">que necesita una herramienta hecha a su medida (porque nada genérico le queda bien)...</p>
+          <p class="skill">Le ayudo a definirla y a construirla desde cero.</p>
+        </div></div>
+
+        <div class="cat">CRM y clientes</div>
+        <div class="item-row"><span class="item-emoji">🤝</span><div class="item" data-color="green">
+          <p class="problem">a quien se le pierden clientes potenciales porque no les da seguimiento...</p>
+          <p class="skill">Le configuro su CRM <span class="def">(sistema para gestionar clientes)</span> (por ejemplo Kommo) para que sepa exactamente en qué etapa está cada cliente.</p>
+        </div></div>
+      </div>
+    </div>
+
+    <div class="panel" data-panel="intermedio">
+      <p class="panel-sub">Gerentes de operaciones, líderes de proyecto, perfiles con nociones básicas de tecnología</p>
+      <p class="intro-phrase">Si conoces a alguien&hellip;</p>
+      <div class="items">
+        <div class="cat">Bases de datos y reportes</div>
+        <div class="item-row"><span class="item-emoji">⏳</span><div class="item" data-color="yellow">
+          <p class="problem">cuyos reportes o consultas tardan minutos en correr...</p>
+          <p class="skill">Optimizo bases de datos SQL Server <span class="def">(motor de bases de datos usado en muchas empresas)</span> para que lo que tardaba minutos, tarde segundos.</p>
+        </div></div>
+        <div class="item-row"><span class="item-emoji">🔄</span><div class="item" data-color="yellow">
+          <p class="problem">que mueve datos entre sistemas a mano, todos los días...</p>
+          <p class="skill">Construyo pipelines de datos (ETL/SSIS <span class="def">(herramientas que mueven y transforman datos automáticamente entre sistemas)</span>) que extraen, transforman y cargan información sin intervención manual.</p>
+        </div></div>
+
+        <div class="cat">Automatización de procesos</div>
+        <div class="item-row"><span class="item-emoji">⚙️</span><div class="item" data-color="yellow">
+          <p class="problem">que quiere automatizar un proceso completo, no solo un paso suelto...</p>
+          <p class="skill">Diseño flujos de punta a punta: desde que entra el dato hasta que se genera la acción o el reporte.</p>
+        </div></div>
+
+        <div class="cat">Inteligencia Artificial aplicada</div>
+        <div class="item-row"><span class="item-emoji">🧠</span><div class="item" data-color="yellow">
+          <p class="problem">que quiere que la IA analice información, no solo responda preguntas sueltas...</p>
+          <p class="skill">Integro modelos de IA a procesos existentes para generar diagnósticos automáticos (ventas, desempeño, etc.).</p>
+        </div></div>
+        <div class="item-row"><span class="item-emoji">🎓</span><div class="item" data-color="yellow">
+          <p class="problem">que necesita capacitar a su equipo (por ejemplo abogados, vendedores) en IA aplicada a su trabajo real...</p>
+          <p class="skill">Diseño e imparto cursos en vivo con contenido adaptado a su lenguaje y sus casos.</p>
+        </div></div>
+
+        <div class="cat">Software a medida</div>
+        <div class="item-row"><span class="item-emoji">🔌</span><div class="item" data-color="yellow">
+          <p class="problem">que necesita un servicio o app conectado directamente a las APIs <span class="def">(conexiones que permiten que dos sistemas compartan información automáticamente)</span> de las plataformas que usa (Amazon, etc.)...</p>
+          <p class="skill">Construyo esas herramientas personalizadas de principio a fin.</p>
+        </div></div>
+        <div class="item-row"><span class="item-emoji">⚠️</span><div class="item" data-color="yellow">
+          <p class="problem">con un sistema viejo que sigue funcionando pero ya es un riesgo...</p>
+          <p class="skill">Lo modernizo sin detener la operación.</p>
+        </div></div>
+      </div>
+    </div>
+
+    <div class="panel" data-panel="avanzado">
+      <p class="panel-sub">Perfiles técnicos, CTOs, líderes de desarrollo, equipos de datos</p>
+      <p class="intro-phrase">Si conoces a alguien&hellip;</p>
+      <div class="items">
+        <div class="cat">Ingeniería de datos</div>
+        <div class="item-row"><span class="item-emoji">🐌</span><div class="item" data-color="red">
+          <p class="problem">con planes de ejecución lentos en un data warehouse <span class="def">(base de datos diseñada para analizar grandes volúmenes de información)</span> de alto volumen...</p>
+          <p class="skill">Optimizo consultas SQL Server, incluyendo conversión de funciones multi-statement a inline table-valued functions para mejorar estadísticas y paralelismo.</p>
+        </div></div>
+        <div class="item-row"><span class="item-emoji">💥</span><div class="item" data-color="red">
+          <p class="problem">con datos corruptos por charset <span class="def">(codificación de texto)</span> en MySQL legacy...</p>
+          <p class="skill">Diagnostico y corrijo corrupción UTF-8/utf8mb4 a nivel de tabla y de datos ya corrompidos.</p>
+        </div></div>
+
+        <div class="cat">Automatización e IA a nivel de sistema</div>
+        <div class="item-row"><span class="item-emoji">🚀</span><div class="item" data-color="red">
+          <p class="problem">que quiere meter un LLM <span class="def">(modelo de lenguaje de IA, como el que usa ChatGPT)</span> dentro de un flujo de negocio real, no solo un chatbot...</p>
+          <p class="skill">Integro APIs de modelos de lenguaje (Claude API) para automatizar análisis y generar insights dentro de procesos existentes.</p>
+        </div></div>
+        <div class="item-row"><span class="item-emoji">🗂️</span><div class="item" data-color="red">
+          <p class="problem">armando un entorno de trabajo multi-cliente con IA...</p>
+          <p class="skill">Diseño esos entornos con Claude Cowork: estructura de carpetas, archivos de contexto (CLAUDE.md), indexación por manifiesto y reconocimiento automático de datos.</p>
+        </div></div>
+
+        <div class="cat">Arquitectura y desarrollo</div>
+        <div class="item-row"><span class="item-emoji">🕸️</span><div class="item" data-color="red">
+          <p class="problem">con un sistema PHP legacy que nadie quiere tocar...</p>
+          <p class="skill">Lo modernizo: migro funciones deprecated a PDO <span class="def">(forma segura de conectar PHP con bases de datos)</span>, centralizo conexiones, agrego logging con auto-rotación, todo de forma progresiva sin parar producción.</p>
+        </div></div>
+        <div class="item-row"><span class="item-emoji">🐳</span><div class="item" data-color="red">
+          <p class="problem">que necesita un backend dockerizado <span class="def">(empaquetado con Docker, para que el software funcione igual en cualquier servidor)</span> con integraciones externas (APIs, OAuth <span class="def">(protocolo de autenticación segura entre sistemas)</span> multi-cliente)...</p>
+          <p class="skill">Desarrollo esos servicios en Python con PostgreSQL <span class="def">(sistema de bases de datos)</span>, con conocimiento de arquitectura AWS <span class="def">(servicios de nube de Amazon)</span>.</p>
+        </div></div>
+
+        <div class="cat">Liderazgo técnico</div>
+        <div class="item-row"><span class="item-emoji">🌉</span><div class="item" data-color="red">
+          <p class="problem">que necesita a alguien que hable con desarrollo Y con negocio...</p>
+          <p class="skill">20+ años en ingeniería de datos y automatización (Telefónica Ecuador, Livingston International, Banco Azteca) — traduzco entre ambos mundos.</p>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="wrap">
+    <h2>¿No estás seguro si su problema encaja aquí?</h2>
+    <p>Que me escriba directo — le digo si puedo ayudarle.</p>
+    <a href="https://wa.me/523342473145" class="btn btn-primary">Escribir por WhatsApp</a>
+    <span class="whatsapp-number">+52 33 4247 3145</span>
+  </div>
+</section>
+
+<footer>
+  <p>Alex — Automatización, datos e IA aplicada</p>
+</footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-expanded', isOpen);
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', false);
+    });
+  });
+
+  const tabs = document.querySelectorAll('.tab');
+  const panels = document.querySelectorAll('.panel');
+  const clickHint = document.getElementById('clickHint');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const level = tab.dataset.level;
+      tabs.forEach(t => t.classList.toggle('active', t === tab));
+      panels.forEach(p => p.classList.toggle('active', p.dataset.panel === level));
+      if (clickHint) clickHint.classList.add('hidden');
+    });
+  });
+</script>
+
+</body>
+</html>
